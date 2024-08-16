@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React from 'react';
+import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
+import { ThemeProvider } from './components/Theme';
+import  AddProduct from './components/AddProduct';
+import Header from './components/header';
+import ProductsPage from './pages/ProductsPage';
+import ProductDetail from './pages/ProductDetail';
+
+
+
+function AppRoutes() {
+  const routes = [
+    { path: '/', element: <ProductsPage /> },
+    { path: '/addProduct', element: <AddProduct /> },
+    { path: '/productDetail/:id', element: <ProductDetail /> },
+    { path: '*', element: <ProductsPage /> },
+
+  ];
+
+  return useRoutes(routes);
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <ThemeProvider>
+        <Router>
+          <Header />
+            <AppRoutes />
+        </Router>
+      </ThemeProvider>
   );
 }
 
