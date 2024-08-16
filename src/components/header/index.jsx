@@ -1,6 +1,7 @@
 import React from "react";
 import ThemeSwitcher from "../../components/ThemeSwitcher";
 import { useTheme } from "../../components/Theme";
+import "../../styles/common.css";
 
 const Header = () => {
   const { theme } = useTheme();
