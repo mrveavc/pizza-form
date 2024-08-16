@@ -1,15 +1,15 @@
-import { initializeApp } from 'firebase/app';
+
+import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  
-  apiKey: "AIzaSyAFnspxFSWIffYwX0PHCM2EbQfU84mLHao",
-  authDomain: "pizza-form-eec5b.firebaseapp.com",
-  projectId: "pizza-form-eec5b",
-  storageBucket: "pizza-form-eec5b.appspot.com",
-  messagingSenderId: "98143127499",
-  appId: "1:98143127499:web:e9c870188874574727584e"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
